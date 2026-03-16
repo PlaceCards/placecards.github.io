@@ -3,33 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlaceCards | Free Online Place Card Designer & Templates</title>
-    <meta name="description" content="Create beautiful place cards and escort cards for weddings and events. Free online designer, printable templates, and guest management.">
-    <meta name="keywords" content="place cards, escort cards, wedding place cards, printable place card templates, seating cards">
+
+    <!-- SEO Meta Tags -->
+    <title>PlaceCards - Free Online Place Card Designer & Printable Templates</title>
+    <meta name="description" content="Design and print beautiful place cards, escort cards, and seating cards for weddings and events. Free, browser-based, and easy to use. Support for A4, Letter, and Avery labels.">
+    <meta name="keywords" content="place cards, escort cards, wedding place cards, printable place card templates, seating cards, table numbers, wedding stationery">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://placecards.github.io/">
+    <meta property="og:title" content="PlaceCards - Professional Seating Card Generator">
+    <meta property="og:description" content="Design beautiful place cards in seconds. 100% free, easy to print, no registration required.">
+    <meta property="og:image" content="https://placecard.us/preview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://placecards.github.io/">
+    <meta name="twitter:title" content="PlaceCards - Free Seating Card Designer">
+    <meta name="twitter:description" content="Create printable place cards for your wedding or event. Online designer with high-quality templates.">
+    <meta name="twitter:image" content="https://placecard.us/preview.png">
+
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 40px auto; padding: 0 20px; text-align: center; }
-        h1 { color: #2d333b; }
-        .btn { display: inline-block; background: #2da44e; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px; }
-        .links { margin-top: 30px; }
-        .links a { color: #0969da; margin: 0 10px; text-decoration: none; }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+        }
+        iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: #f8fafc;
+        }
+        .cta-wrapper {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 220px;
+            height: 220px;
+            overflow: hidden;
+            z-index: 10000;
+            pointer-events: none;
+        }
+        .cta-ribbon {
+            pointer-events: auto;
+            background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+            color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+            padding: 10px 40px;
+            font-size: 16px;
+            transform: rotate(45deg);
+            width: 320px;
+            position: absolute;
+            top: 45px;
+            right: -65px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .cta-ribbon:hover {
+            background: linear-gradient(135deg, #be123c 0%, #9f1239 100%);
+            transform: rotate(45deg) scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            .cta-ribbon {
+                font-size: 14px;
+                padding: 8px 30px;
+                top: 35px;
+                right: -80px;
+            }
+        }
+        #loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #64748b;
+            font-size: 14px;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
-    <h1>PlaceCards</h1>
-    <p>The #1 Open Source Place Card & Seating Card Designer.</p>
-    
-    <div>
-        <a href="https://placecard.us/place-card-designer" class="btn">Start Designing Free</a>
+
+    <!-- Loading Placeholder -->
+    <div id="loading">
+        Loading PlaceCards Designer...
     </div>
 
-    <div class="links">
-        <p>Explore our resources:</p>
-        <a href="https://placecard.us/">Official Home</a> |
-        <a href="https://placecard.us/templates">Free Templates</a> |
-        <a href="https://github.com/PlaceCards">GitHub Organization</a>
+    <iframe
+        id="app-frame"
+        src="https://placecard.us/place-card-designer?utm_source=github_io&utm_medium=referral"
+        title="PlaceCards Designer Tool"
+        allow="clipboard-write"
+        onload="document.getElementById('loading').style.display='none';"
+    ></iframe>
+
+    <div class="cta-wrapper">
+        <a href="https://placecard.us/place-card-designer" class="cta-ribbon" target="_blank">
+            ✨ Open Full Version
+        </a>
     </div>
 
-    <hr style="margin-top: 50px; border: 0; border-top: 1px solid #eee;">
-    <p style="font-size: 0.8em; color: #666;">&copy; 2026 PlaceCards. Beautiful seating for every occasion.</p>
 </body>
 </html>
